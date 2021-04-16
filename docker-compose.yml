@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+
+  hello:
+    build:
+      context: ./hello
+      dockerfile: Dockerfile
+    volumes:
+      - ./hello:/appsrc
+    ports:
+      - 9000:80
+    #command: tail -f /dev/null
+
+  whatsup:
+    build:
+      context: ./whatsup
+      dockerfile: Dockerfile
+    volumes:
+      - ./whatsup:/appsrc
+    ports:
+      - 8081:80
+    #command: tail -f /dev/null
